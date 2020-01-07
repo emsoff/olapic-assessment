@@ -3,7 +3,16 @@ $(document).ready(function() {
   /******** Homepage Carousel - All Photos *********/
 
   // Build API Request
-  var olapicEndpoint = "";
+
+  // Set customer-specific variables
+
+  var apiKey = '0a40a13fd9d531110b4d6515ef0d6c529acdb59e81194132356a1b8903790c18';
+
+  var customerId = '215757';
+
+  // Build endpoint
+  
+  var olapicEndpoint = "https://photorankapi-a.akamaihd.net/customers/" + customerId + "/media/recent?auth_token=" + apiKey + "&version=v2.2";
 
   $.ajax({
     dataType: "json",
@@ -12,24 +21,29 @@ $(document).ready(function() {
     data: {
       format: "json"
     },
-    success: function(data) {     
-      
+    success: function(data) {
+
       // Create array of photos pulled from the Olapic API response
-      var mediaArray = ;
 
-      // Loop through the mediaArray
-      
+      var mediaArray = data.data._embedded.media;
 
-      // Append the images to the carousel
+      // Loop through the mediaArray      
+
+      for (var i = 0, len = mediaArray.length; i < len; i++) {
+
+        // Append the images to the carousel
+
+        var olapicImage = mediaArray[i].images.normal;
         $(".owl-carousel").append("<div class='item olapic-image'><img src='" + olapicImage + "'></div>");
-      };
+      }
 
       // Set up Owl Carousel
+
       $(".owl-carousel").owlCarousel({
         items: 4,
         loop: true,
         touchDrag: true,
-        nav: false,
+        nav: true,
         navText: ["<i class='arrow left'></i>", "<i class='arrow right'></i>"],
         dots: false,
         video: true,

@@ -6,7 +6,6 @@
 }
 
 .owl-carousel .owl-stage-outer {
-	max-width:450px;
 	width:100%;
 	margin:0 auto;
 }
@@ -34,12 +33,16 @@
 	margin-top:0;
 }
 
+.owl-prev, .owl-next {
+	position: absolute;
+}
+
 .owl-prev {
-	
+	left: 10px;
 }
 
 .owl-next {
-	
+	right: 10px;
 }
 
 .owl-theme .owl-nav [class*=owl-] {
