@@ -33,16 +33,12 @@
 	margin-top:0;
 }
 
-.owl-prev, .owl-next {
-	position: absolute;
-}
-
 .owl-prev {
-	left: 10px;
+	float: left;
 }
 
 .owl-next {
-	right: 10px;
+	float: right;
 }
 
 .owl-theme .owl-nav [class*=owl-] {
@@ -61,7 +57,7 @@
 }
 
 .left {
-	transform: rotate(135deg);
+	transform: rotate(135deg) translate(-50%, 0);
 	-webkit-transform: rotate(135deg);
 }
 
