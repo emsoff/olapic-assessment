@@ -33,12 +33,17 @@
 	margin-top:0;
 }
 
+.owl-prev, .owl-next {
+	position: absolute;
+	top: -17.5px;
+}
+
 .owl-prev {
-	float: left;
+	left: 0;
 }
 
 .owl-next {
-	float: right;
+	right: 0;
 }
 
 .owl-theme .owl-nav [class*=owl-] {
